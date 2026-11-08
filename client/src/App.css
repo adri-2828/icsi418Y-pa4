@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Pacifico&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #ffd6e8;
+    overflow-x: hidden;
+}
+
+/* Heart background */
+.hearts {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.55);
+    animation-name: floatHeart;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Floating heart animation */
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+}
+
+/* all the forms */
+.forms {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.signup-container,
+.login-container {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(160, 60, 110, 0.25);
+    backdrop-filter: blur(5px);
+}
+
+/* Deals w the script headings */
+.signup-container h2,
+.login-container h2 {
+    color: #c34f89;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #f3c2d8;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #fffafd;
+    color: #333333;
+    outline: none;
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+input:focus {
+    border-color: #df6da5;
+    box-shadow: 0 0 0 3px rgba(223, 109, 165, 0.15);
+}
+
+button {
+    margin-top: 8px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #df6da5, #b65fc9);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(182, 95, 201, 0.3);
+}
+
+p {
+    margin-top: 18px;
+    text-align: center;
+    color: #777;
+    font-weight: bold;
+}
+
+/* Project dashboard */
+.dashboard {
+    width: min(1050px, 92%);
+    margin: 35px auto;
+    padding: 32px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 252, 255, 0.96);
+    border: 1px solid #e8cbed;
+    border-radius: 24px;
+    box-shadow: 0 14px 35px rgba(116, 74, 132, 0.16);
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    color: #82519a;
+    font-family: "Pacifico", cursive;
+    font-size: 42px;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+.dashboard-header p {
+    margin-top: 5px;
+    text-align: left;
+    color: #876f8e;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 16px;
+}
+
+.logout-button {
+    min-width: 105px;
+}
+
+.dashboard-section {
+    margin-top: 22px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #eedaf1;
+    border-radius: 18px;
+}
+
+.dashboard-section h2 {
+    margin-bottom: 20px;
+    color: #87539e;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 25px;
+}
+
+.dashboard-section h3 {
+    margin: 20px 0 10px;
+    color: #82548f;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 20px;
+}
+
+.dashboard label {
+    display: block;
+    margin-bottom: 7px;
+    color: #76587e;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dashboard input,
+.dashboard textarea,
+.dashboard select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #e6cbe9;
+    border-radius: 12px;
+    background: #fffafd;
+    color: #59485e;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.dashboard textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.dashboard input:focus,
+.dashboard textarea:focus,
+.dashboard select:focus {
+    border-color: #b984c8;
+    box-shadow: 0 0 0 3px rgba(185, 132, 200, 0.14);
+}
+
+.dashboard select {
+    cursor: pointer;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.project-card {
+    padding: 21px;
+    background: #fffafd;
+    border: 1px solid #ead4ee;
+    border-radius: 16px;
+    box-shadow: 0 5px 14px rgba(114, 76, 127, 0.07);
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    color: #7d4d92;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 22px;
+}
+
+.project-card p {
+    margin: 8px 0;
+    text-align: left;
+    color: #705f75;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-weight: normal;
+}
+
+.project-description {
+    min-height: 24px;
+}
+
+.project-details {
+    margin: 16px 0;
+    padding: 12px 14px;
+    background: #faf4fb;
+    border-radius: 11px;
+}
+
+.project-details p {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.project-details span {
+    color: #9367a0;
+    font-weight: bold;
+}
+
+.member-management {
+    margin-top: 20px;
+}
+
+.member-list {
+    list-style: none;
+    padding: 0;
+}
+
+.member-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    color: #67556c;
+    background: #fffafd;
+    border: 1px solid #ead7ed;
+    border-radius: 12px;
+}
+
+.small-button {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 9px 13px;
+    font-size: 14px;
+}
+
+.add-member-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.add-member-row button {
+    margin: 0;
+    min-width: 120px;
+}
+
+.dashboard-message {
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px auto 0;
+    padding: 11px 18px;
+    color: #77527f;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dfc2e5;
+    border-radius: 12px;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-weight: bold;
+}
+
+/* Confetti */
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 14px;
+    border-radius: 2px;
+    animation-name: confettiFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.confetti-0 {
+    background: #9b6bb0;
+}
+
+.confetti-1 {
+    background: #d88caf;
+}
+
+.confetti-2 {
+    background: #b58ac7;
+}
+
+.confetti-3 {
+    background: #e8abc5;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(105vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+/* this accomodates the smaller screens */
+@media (max-width: 850px) {
+    .forms {
+        flex-direction: column;
+    }
+
+    .signup-container,
+    .login-container {
+        width: min(380px, 90vw);
+    }
+
+    .dashboard {
+        width: 94%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-header h1 {
+        font-size: 35px;
+    }
+
+    .form-row,
+    .project-grid,
+    .add-member-row {
+        grid-template-columns: 1fr;
+    }
+
+    .member-list li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
